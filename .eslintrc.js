@@ -5,5 +5,6 @@ module.exports = {
   rules: {
     "prettier/prettier": "error",
     "react-native/no-unused-styles": "error",
+    "import/no-unresolved": "off",
   },
 };
