@@ -1,13 +1,23 @@
+import Button from "@/components/Button";
+import { PlantCard } from "@/components/PlantlyCard";
+import { usePlantStore } from "@/store/plantsStore";
 import { theme } from "@/theme";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { useRouter } from "expo-router";
+import { FlatList, StyleSheet } from "react-native";
 
 export default function HomeScreen() {
+  const plants = usePlantStore((state) => state.plants);
+  const router = useRouter();
   return (
-    <View style={styles.container}>
-      <Text>Welcome back!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <FlatList
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}
+      data={plants}
+      renderItem={({ item }) => <PlantCard plant={item} />}
+      ListEmptyComponent={
+        <Button title="Add Plant" onClick={() => router.navigate("/new")} />
+      }
+    />
   );
 }
 
@@ -15,7 +25,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: theme.colorWhite,
-    alignItems: "center",
-    justifyContent: "center",
+  },
+
+  contentContainer: {
+    padding: 12,
   },
 });

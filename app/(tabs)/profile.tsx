@@ -7,7 +7,7 @@ export default function ProfileScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Profile</Text>
-      <Button OnClick={toggle}>Toggle onboarding</Button>
+      <Button title="Back to onboarding" onClick={toggle} />
     </View>
   );
 }
