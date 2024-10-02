@@ -10,6 +10,7 @@ export default function Layout() {
     >
       <Stack.Screen name="onboarding" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+
       <Stack.Screen
         name="new"
         options={{ presentation: "modal", title: "New Plant" }}
