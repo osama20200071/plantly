@@ -16,8 +16,6 @@ export default function NewScreen() {
   const addPlant = usePlantStore((state) => state.addPlant);
   const router = useRouter();
 
-  console.log(new Date().getTime());
-
   const handleSubmit = () => {
     if (!name) {
       return Alert.alert("Validation Error", "Give your plant a name");
