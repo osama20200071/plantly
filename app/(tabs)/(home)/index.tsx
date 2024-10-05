@@ -6,6 +6,7 @@ import { useRouter } from "expo-router";
 import { FlatList, StyleSheet } from "react-native";
 
 export default function HomeScreen() {
+  console.log("homeScreen");
   const plants = usePlantStore((state) => state.plants);
   const router = useRouter();
   return (

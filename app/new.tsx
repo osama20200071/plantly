@@ -10,6 +10,7 @@ import { useRouter } from "expo-router";
 import * as ImagePicker from "expo-image-picker";
 
 export default function NewScreen() {
+  console.log("newScreen");
   const [imageUri, setImageUri] = useState("");
   const [name, setName] = useState("");
   const [days, setDays] = useState("");

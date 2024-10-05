@@ -19,12 +19,21 @@ export default function PlantDetails() {
     state.plants.find((plant) => String(plant.id) === plantId),
   );
   const navigation = useNavigation();
+  console.log(params);
 
   useEffect(() => {
     navigation.setOptions({
-      title: plant?.name,
+      title: plant?.name || "Plant Details",
     });
   }, [plant?.name, navigation]);
+
+  useEffect(() => {
+    if (params.action === "water") {
+      if (typeof plantId === "string") {
+        waterPlant(plantId);
+      }
+    }
+  }, [params.action, plantId, waterPlant]);
 
   const handleWaterPlant = () => {
     if (typeof plantId === "string") {

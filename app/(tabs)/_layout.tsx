@@ -4,7 +4,12 @@ import Entypo from "@expo/vector-icons/Entypo";
 import { theme } from "@/theme";
 import { useUserStore } from "@/store/userStore";
 
+export const unstable_settings = {
+  initialRouteName: "(home)",
+};
+
 export default function Layout() {
+  console.log("second layout");
   const { hasFinishedOnBoarding } = useUserStore();
   if (!hasFinishedOnBoarding) {
     return <Redirect href="/onboarding" />;

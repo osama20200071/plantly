@@ -3,6 +3,7 @@ import { useUserStore } from "@/store/userStore";
 import { Text, View, StyleSheet } from "react-native";
 
 export default function ProfileScreen() {
+  console.log("profileScreen");
   const { toggle } = useUserStore();
   return (
     <View style={styles.container}>
